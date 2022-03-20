@@ -1,0 +1,19 @@
+[store]
+brands=[
+    "gdlp-male-adidas",
+    "gdlp-female-adidas",
+    "gdlp-unisex-adidas",
+    "gdlp-kids-adidas",
+    "gdlp-male-adidas-consortium",
+    "gdlp-unisex-adidas-consortium",
+    "gdlp-male-adidas-y3",
+    "gdlp-unisex-adidas-y3",
+    "gdlp-unisex-nike",
+    "gdlp-kids-nike",
+    "gdlp-male-nike",
+    "gdlp-female-nike",
+    "gdlp-male-jordan",
+    "gdlp-unisex-jordan",
+    "gdlp-kids-jordan"
+]
+GOOGLE_APPLICATION_CREDENTIALS="./credentials/credentials.json"

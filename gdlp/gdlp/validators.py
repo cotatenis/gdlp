@@ -1,0 +1,67 @@
+from schematics.models import Model
+from schematics.types import URLType, StringType, ListType, FloatType, DateTimeType, BooleanType, ModelType, IntType
+
+class productChildren(Model):
+    id = StringType()
+    name = StringType()
+    price = StringType()
+    priceexcludingtax = StringType()
+    sku = StringType()
+
+class transactionProducts(Model):
+    id = StringType()
+    name = StringType()
+    parentsku = StringType()
+    price = StringType()
+    priceexcludingtax = StringType()
+    quantity = IntType()
+    sku = StringType()
+    tax = StringType()
+    taxrate = IntType()
+    type = StringType()
+    category = StringType()
+
+class productInfo(Model):
+    categoryId = StringType()
+    categoryName = StringType()
+    customerEmail = StringType()
+    customerFirstName = StringType()
+    customerGroupCode = StringType()
+    customerGroupId = StringType()
+    customerId = StringType()
+    customerLastName = StringType()
+    customerLoggedIn = IntType()
+    pageType = StringType()
+    productChildren = ListType(ModelType(productChildren))
+    productId = StringType()
+    productName = StringType()
+    productPrice = StringType(required=True)
+    productPriceExcludingTax = StringType()
+    productSku = StringType(required=True)
+    productTax = StringType()
+    productType = StringType()
+    transactionAffiliation = StringType()
+    transactionEntity = StringType()
+    transactionId = StringType()
+    transactionProducts = ListType(ModelType(transactionProducts))
+    transactionTotal = FloatType()
+    transactionTax = FloatType()
+
+class SizeAndStock(Model):
+    size = StringType()
+    in_stock = BooleanType()
+
+class GDLPItem(Model):
+    description = ListType(StringType)
+    genre = ListType(StringType)
+    image_uris = ListType(StringType)
+    product = StringType()
+    product_info = ListType(ModelType(productInfo))
+    sku = StringType()
+    spider = StringType()
+    spider_version = StringType()
+    timestamp = DateTimeType(required=True)
+    url = URLType(required=True)
+    image_urls = ListType(URLType)
+    reference_first_image = StringType()
+    sizes_and_stock = ListType(ModelType(SizeAndStock))
